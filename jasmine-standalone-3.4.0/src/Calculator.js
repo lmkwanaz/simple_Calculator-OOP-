@@ -1,32 +1,61 @@
 class Calculator{
+
     constructor(){
-        this.array = [];
-        this.Last = 0;
+      this.arr = [];
+      this.lastAns = 0;
     }
-
-    add(){
-        let sum = 0;
-
-        for(var i = 0; i < arguments.length; i++){
-            sum += (arguments[i]);
-             this.Last = sum;
+  
+    add(...args){
+  
+      let i = 0;
+      let sum = 0;
+      for (; i < args.length; i++){
+        if (args[i] === "LAST"){
+          args[i] = this.lastAns;
         }
-        return sum;
+        if (args[i] === "SLOT_1"){
+          args[i] = this.get_slot(1);
+        }
+        if (args[i] === "SLOT_2"){
+          args[i] = this.get_slot(2);
+        }
+        sum = sum + args[i];
+      }
+      this.lastAns = sum;
+      return sum;
     }
-   last(){
-       return this.Last;
-   }
-   set_slot(b){
-       return this.array.push(this.Last);
-    ///  return this.array[b -1];
-   }
-   get_slot(b){
-       return this.array[b - 1];
-   }
-}
-
-let Calculator_instance = new Calculator();
-console.warn(Calculator_instance.add(1, 3))
-console.warn(Calculator_instance.last());
-console.warn(Calculator_instance.set_slot(1));
-console.warn(Calculator_instance.get_slot(1));
+  
+    multiply(...args){
+  
+      let i = 0;
+      let Answer = 1;
+      for (; i < args.length; i++){
+        if (args[i] === "LAST"){
+          if (args[i] === "SLOT_1"){
+            args[i] = this.get_slot(1);
+          }
+          if (args[i] === "SLOT_2"){
+            args[i] = this.get_slot(2);
+          }
+          args[i] = this.lastAns;
+        }
+        Answer = Answer * args[i];
+      }
+      this.lastAns = Answer;
+      return Answer;
+    }
+  
+    last(){
+      return this.lastAns;
+    }
+    set_slot(n){
+      this.arr.push(this.lastAns);
+      return this.arr[n - 1];
+    }
+    get_slot(n){
+      return this.arr[n - 1];
+    }
+  
+  }
+  
+  let calculator_instance = new Calculator();
