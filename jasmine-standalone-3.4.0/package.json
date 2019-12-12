@@ -1,0 +1,17 @@
+{
+  "name": "jasmine-standalone-3.4.0",
+  "version": "1.0.0",
+  "description": "testoutput",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine-node spec"
+  },
+  "author": "lmkwanaz",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine-node": "^3.0.0"
+  },
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}

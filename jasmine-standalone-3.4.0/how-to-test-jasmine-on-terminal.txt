@@ -1,0 +1,6 @@
+ cd  Desktop/
+ cd jasmine-standalone-3.4.0
+npm install jasmine-node --save-dev
+npm install request --save
+//then after go to your spec and create your spec file.
+//go to your package.json and go the test section and change it to "jasmine-node spec"

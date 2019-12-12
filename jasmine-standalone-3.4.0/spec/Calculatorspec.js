@@ -1,3 +1,5 @@
+let calculator_instance = require('../src/Calculator');
+
 describe("A Calcualtor function", function() {
 
     it("Should be able to add numbers", function() {

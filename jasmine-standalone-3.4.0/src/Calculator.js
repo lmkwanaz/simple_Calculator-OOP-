@@ -59,3 +59,6 @@ class Calculator{
   }
   
   let calculator_instance = new Calculator();
+  
+
+  module.exports = calculator_instance;
